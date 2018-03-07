@@ -26,7 +26,7 @@ $("#addTopic").on("click", function(event) {
     makeButtons();
   });
 
-
+//spawns gifs when puttons are clicked
   $(document).on("click", ".buttons", function(event){
       var value = $(this).val();
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -45,7 +45,7 @@ $("#addTopic").on("click", function(event) {
 
               var gifDiv = $("<div class='giphy'>")
 
-              var p = $("<p>"+results[i].rating+"</p>")
+              var p = $("<p>Rating: "+results[i].rating+"</p>")
 
               var imageUrl = results[i].images.original_still.url;
               
@@ -62,6 +62,7 @@ $("#addTopic").on("click", function(event) {
 
   });
 
+  //turns gif on and off
   $(document).on("click", ".gifImage", function(event){
     console.log(this)
   if (switcher === true ) {
